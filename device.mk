@@ -137,6 +137,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.xiaomi_lito
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
 # OTA
 PRODUCT_HOST_PACKAGES += \
