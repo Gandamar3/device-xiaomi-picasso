@@ -10,6 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from picasso device
 $(call inherit-product, device/xiaomi/picasso/device.mk)
+$(call inherit-product, vendor/gms/gms_full.mk)
 
 
 # Inherit some common Lineage stuff.
