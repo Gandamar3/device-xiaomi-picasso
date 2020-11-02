@@ -123,14 +123,7 @@ TARGET_USES_MKE2FS := true
 
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(DEVICE_PATH)/sepolicy/private
-
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    device/qcom/sepolicy_q/generic/private \
-    device/qcom/sepolicy_q/qva/private
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
-    device/qcom/sepolicy_q/generic/public \
-    device/qcom/sepolicy_q/qva/public
+include device/qcom/sepolicy/SEPolicy.mk
 
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
