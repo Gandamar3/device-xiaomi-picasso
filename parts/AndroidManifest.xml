@@ -19,7 +19,7 @@
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
-        <receiver android:name="org.lineageos.settings.BootCompletedReceiver">
+        <receiver android:name=".BootCompletedReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -35,7 +35,7 @@
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.system" />
+                android:value="com.android.settings.category.ia.display" />
             <meta-data
                 android:name="com.android.settings.summary"
                 android:resource="@string/device_specific_settings_summary" />
@@ -45,17 +45,11 @@
             android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title"
             android:theme="@style/Theme.Main">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.ia.display" />
         </activity>
 
         <service android:name=".doze.DozeService"
                  android:permission="XiaomiDozeService">
         </service>
-
 
         <activity
             android:name=".thermal.ThermalActivity"

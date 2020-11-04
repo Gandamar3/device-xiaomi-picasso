@@ -21,9 +21,10 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.widget.Toast;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.Preference;
+
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreference;
 
 import org.lineageos.settings.utils.RefreshRateUtils;
