@@ -31,6 +31,10 @@ LOCAL_SRC_FILES := \
     service.cpp \
     utils.c
 
+ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
+    LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
+endif
+
 LOCAL_REQUIRED_MODULES := \
     android.hardware.power@1.2-service.xiaomi_lito.rc
 
