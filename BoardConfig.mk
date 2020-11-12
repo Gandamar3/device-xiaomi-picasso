@@ -160,3 +160,13 @@ TARGET_BOARD_PLATFORM := lito
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
     hardware/google/pixel
+# Camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_picasso
+TARGET_RECOVERY_DEVICE_MODULES := libinit_picasso
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := picasso
+TARGET_NO_BOOTLOADER := true
