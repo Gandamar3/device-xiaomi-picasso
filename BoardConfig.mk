@@ -10,6 +10,8 @@ DEVICE_PATH := device/xiaomi/picasso
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -61,14 +63,13 @@ BOARD_KERNEL_SECOND_OFFSET := 0xf00000
 BOARD_KERNEL_TAGS_OFFSET := 0x100
 BOARD_KERNEL_OFFSET := 0x00008000
 TARGET_KERNEL_ARCH := arm64
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/boot29_10.img-dtb
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/boot12.0.7.img-dtb
 #BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo29_10.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/boot29_10.img-zImage
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo12.0.7.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/boot12.0.7.img-zImage
 ifeq ($(TARGET_PREBUILT_KERNEL),)
   TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7250
   TARGET_KERNEL_CONFIG := vendor/picasso_user_defconfig
-  TARGET_KERNEL_CLANG_COMPILE := true
 endif
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
@@ -159,4 +160,32 @@ TARGET_BOARD_PLATFORM := lito
 
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    hardware/google/pixel
+    hardware/google/pixel \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+
+# LMKD
+TARGET_LMKD_STATS_LOG := true
+
+# APEX
+DEXPREOPT_GENERATE_APEX_IMAGE := true
+
+# Camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+
+# Charger
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
+
+# Display
+TARGET_USES_HWC2 := true
+
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_picasso
+TARGET_RECOVERY_DEVICE_MODULES := libinit_picasso
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := picasso
+TARGET_NO_BOOTLOADER := true
+
