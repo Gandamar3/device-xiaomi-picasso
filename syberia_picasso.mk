@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from picasso device
 $(call inherit-product, device/xiaomi/picasso/device.mk)
-$(call inherit-product, vendor/gms/gms_full.mk)
+#$(call inherit-product, vendor/gms/gms_full.mk)
 
 
 # Inherit some common Lineage stuff.
@@ -33,12 +33,12 @@ TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
 # Build info
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DISC="coral-user 11 RP1A.200720.009 6720564 release-keys"
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+#    PRIVATE_BUILD_DISC="coral-user 11 RP1A.200720.009 6720564 release-keys"
 
-BUILD_FINGERPRINT := google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
+#BUILD_FINGERPRINT := google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
