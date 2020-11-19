@@ -13,14 +13,14 @@ $(call inherit-product, device/xiaomi/picasso/device.mk)
 
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/syberia/common.mk)
-
+$(call inherit-product, vendor/evolution/config/common_full_phone.mk)
+WITH_GAPPS := true
 USE_GAPPS := true
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := syberia_picasso
+PRODUCT_NAME := evolution_picasso
 PRODUCT_DEVICE := picasso
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi K30 5G
