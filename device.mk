@@ -11,7 +11,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # ANXCamera
-$(call inherit-product-if-exists, vendor/ANXCamera/config.mk)
+#$(call inherit-product-if-exists, vendor/ANXCamera/config.mk)
 
 # All components inherited here go to system_ext image
 #
@@ -145,19 +145,42 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-lineage \
+    $(LOCAL_PATH)/overlay-vendor
+    
+# Overlays - override vendor ones
+PRODUCT_PACKAGES += \
+    AospFrameworkResOverlay \
+    CarrierConfigResCommon \
+    CellBroadcastReceiverResCommon \
+    DevicesAndroidOverlay \
+    DevicesOverlay \
+    DocumentsUIOverlay \
+    ElderlyNavigationBarOverlay \
+    FrameworksResCommon \
+    FrameworksResTarget \
+    GestureLineOverlay \
+    MccMncOverlay \
+    MiuiBluetoothOverlay \
+    MiuiFrameworkResOverlay \
+    MiuiSettingsResOverlay \
+    MiuiSystemUIResOverlay \
+    SystemUIResCommon \
+    TelecommResCommon \
+    TelephonyResCommon
+
+# OTA
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
+
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.telephony.ims.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/handheld_core_hardware.xml
 
 PRODUCT_PACKAGES += \
     NotchNoFillOverlay
-
-# Overlays -- Override vendor ones
-PRODUCT_PACKAGES += \
-    FrameworksResCommon \
-    FrameworksResTarget \
-    DevicesOverlay \
-    DevicesAndroidOverlay
-
-# Power
 
 
 # OTA
@@ -172,7 +195,10 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext 
+    telephony-ext
+    
+PRODUCT_PACKAGES += \
+	android.hardware.radio@1.4
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
