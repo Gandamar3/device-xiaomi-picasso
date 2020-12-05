@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 The LineageOS Project
+     Copyright (C) 2020 The LineageOS Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -12,11 +15,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="device_specific_settings_title">Device-specific settings</string>
-    <string name="device_specific_settings_summary">Cutout and refresh rate configuration</string>
+    <string name="cutout_refresh_rate_title">Cutout &amp; refresh rate</string>
+    <string name="cutout_refresh_rate_summary">Remove notch background or change screen refresh rate</string>
     <string name="device_min_refresh_rate">Minimum Refresh Rate</string>
     <string name="device_pill_style_notch">Black-hole notch</string>
-    <string name="msg_device_need_restart">Please restart device for this to take effect.</string>
+    <string name="msg_device_need_restart">Please restart SystemUI for this to take effect.</string>
+
+     <!--  DT2W    -->
+    <string name="dt2w_enable_title">Double-Tap to Wake </string>
+    <string name="dt2w_enable_summary">Double-tap on lockscreen to wake device</string>
 
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal Profiles</string>
@@ -26,4 +33,16 @@
     <string name="thermal_camera">Camera</string>
     <string name="thermal_dialer">Dialer</string>
     <string name="thermal_gaming">Gaming</string>
+
+    <!-- Touch Control Settings -->
+    <string name="touch_control_title">Touch Control</string>
+    <string name="touch_game_mode_title">Enable game mode</string>
+    <string name="touch_game_mode_summary">Increases touch sampling rate to 180Hz</string>
+    <string name="touch_response_title">Touch response</string>
+    <string name="touch_response_summary">Controls touch response</string>
+    <string name="touch_sensitivity_title">Touch sensitivity</string>
+    <string name="touch_sensitivity_summary">Controls touch sensitivity for repeated taps</string>
+    <string name="touch_resistant_title">Touch-resistant area</string>
+    <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
+
 </resources>
