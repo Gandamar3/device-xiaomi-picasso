@@ -10,6 +10,8 @@ DEVICE_PATH := device/xiaomi/picasso
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
+# ANXCamera
+-include vendor/aeonax/ANXCamera/BoardConfigAnx.mk
 
 # Architecture
 TARGET_ARCH := arm64
@@ -152,7 +154,9 @@ TARGET_BOARD_PLATFORM := lito
 
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH) \
-    hardware/google/pixel
+    hardware/google/pixel \
+    hardware/xiaomi
+
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 
