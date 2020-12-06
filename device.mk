@@ -13,6 +13,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # ANXCamera
 $(call inherit-product-if-exists, vendor/ANXCamera/config.mk)
 
+# All components inherited here go to system_ext image
+#
+$(call inherit-product, $(SRC_TARGET_DIR)/product/handheld_system_ext.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/telephony_system_ext.mk)
+
 # ANXCamera
 #$(call inherit-product-if-exists, vendor/aeonax/ANXCamera/anx-vendor.mk)
 
@@ -37,12 +42,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_BUILD_SUPER_PARTITION := false
 BOARD_BUILD_PRODUCT_IMAGE := true
 PRODUCT_SHIPPING_API_LEVEL := 29
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_TARGET_VNDK_VERSION := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_BUILD_PRODUCT_IMAGE := true
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
+#PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
 # Properties
 include $(LOCAL_PATH)/product_prop.mk

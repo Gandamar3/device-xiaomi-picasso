@@ -51,3 +51,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # LMKD
 ro.config.low_ram = false
+
+# Charger Mode
+ro.charger.enable_suspend=true
